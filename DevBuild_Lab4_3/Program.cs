@@ -27,7 +27,7 @@ namespace DevBuild_Lab4_3
         {
             return ContactEmail;
         }
-        public void SetPhone(string phone)
+        public void SetPhone(string phone)  //I thought it would be important to do some formatting here but decided to focus on the main ideas first.
         {
             if (string.IsNullOrEmpty(phone) || string.IsNullOrWhiteSpace(phone))
             {
@@ -112,7 +112,7 @@ namespace DevBuild_Lab4_3
             // Create List of Customers
 
             List<Customer> customers = new List<Customer>();
-            Customer cust = new Customer("Planet Express", "Phillip J. Fry", "fry@planetexpress.com", "000-000-0000"); //Console.WriteLine(c1);
+            Customer cust = new Customer("Planet Express", "Phillip J. Fry", "fry@planetexpress.com", "000-000-0000"); 
             customers.Add(cust);
             cust = new Customer("Springfield Nuclear Power Plant", "Montgomery Burns", "mrburns@snpp.com", "800-252-2525");
             customers.Add(cust);
@@ -147,9 +147,9 @@ namespace DevBuild_Lab4_3
                 else
                 Console.WriteLine(FindCustomer(customers, userInput));  //Expect to see the ToString override result of a Customer, or a "not found"
 
-
-                Console.Write("\nContinue? y/n: ");
-                if (Console.ReadLine() != "y")
+                
+                Console.Write("\nContinue? y/n: ");  // This was added mostly for repeated testing functionality,
+                if (Console.ReadLine() != "y")       // not for user experience. Would create a full method for user.
                     keepGoing = false;
             }
         }
